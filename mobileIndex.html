@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>智订货</title>
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mobileindex.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        var w,h,className;
+        function getSrceenWH(){
+            w = $(window).width();
+            h = $(window).height();
+            $('#dialogBg').width(w).height(h);
+        }
+
+        window.onresize = function(){
+            getSrceenWH();
+        }
+        $(window).resize();
+
+        $(function(){
+            getSrceenWH();
+
+            //显示弹框
+            $('.feel').click(function(){
+                className = $(this).attr('class');
+                $('#dialogBg').fadeIn(300);
+                $('#dialog').removeAttr('class').addClass('animated '+className+'').fadeIn();
+            });
+
+            //关闭弹窗
+            $('.claseDialogBtn').click(function(){
+                $('#dialogBg').fadeOut(300,function(){
+                    $('#dialog').addClass('bounceOutUp').fadeOut();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="col-xs-12 col-sm-12 col-md-12 banner">
+    <img src="images/head.jpg">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 main">
+    <img src="images/word-3.png">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 main bac">
+    <div style="padding: 16px;">
+        <img src="images/word8.png" style="padding-top: 30px;">
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 main">
+    <img src="images/word-6.jpg">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 banner mar-top">
+    <img src="images/funion.png">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 main">
+    <img src="images/word-7.png">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 back con-us">
+    <div style="padding: 40px 40px 10px 40px">
+        <img src="images/word-10.png">
+    </div>
+    <ul class="f-cb">
+        <li><a href="javascript:;" ><img src="images/content.png" class="call"></a></li>
+        <li><img src="images/wechat.png" class="ma"></li>
+    </ul>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 foot addFoot">
+    <a href="javascript:;" class="logo"><img src="images/logo.png"></a>
+    <a href="javascript:;" class="feel bounceIn"><img src="images/tiyan.png"></a>
+    <a href="tel://400-607-3011" class="phone"><img src="images/phone.png"></a>
+</div>
+
+
+<a class="to-top" style="width: 12%;"><img src="images/top.png" style="width: 90%;"></a>
+
+<div id="wrapper">
+
+    <div id="dialogBg"></div>
+    <div id="dialog" class="animated">
+
+        <div class="dialogTop">
+            <a href="javascript:;" class="claseDialogBtn" style="color: #ffffff;">关闭</a>
+        </div>
+        <img src="images/ju.png" style="width: 100%;">
+    </div>
+
+</div>
+
+
+<script src="js/jquery.toTop.min.js"></script>
+
+<script type="text/javascript" src="js/alertPopShow.js"></script>
+<script>
+    $(function() {
+
+        $('.to-top').toTop();
+
+    });
+    // 滑动滚动条
+    $(window).scroll(function(){
+// 滚动条距离顶部的距离 大于 100px时
+        if($(window).scrollTop() >= 100){
+            $(".foot").fadeIn(1000); // 开始淡入
+        } else{
+            $(".foot").stop(true,true).fadeOut(1000); // 如果小于等于 200 淡出
+        }
+    });
+
+</script>
+</body>
+</html>
